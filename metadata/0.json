@@ -1,0 +1,16 @@
+
+{
+  "name": "Lumina University Degree",
+  "description": "An official, cryptographically verified academic credential issued by Lumina University.",
+  "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop",
+  "attributes": [
+    {
+      "trait_type": "Degree Type",
+      "value": "Bachelor of Science"
+    },
+    {
+      "trait_type": "Status",
+      "value": "Verified Graduate"
+    }
+  ]
+}

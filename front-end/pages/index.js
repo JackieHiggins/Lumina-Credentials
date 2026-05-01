@@ -1,7 +1,4 @@
-/*
- * Page: Home
- * Purpose: Landing page for Lumina Credentials.
- */
+// Landing page for Lumina Credentials that introduces the application and links to portals.
 
 import Link from 'next/link';
 

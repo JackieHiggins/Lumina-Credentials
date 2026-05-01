@@ -1,3 +1,5 @@
+// Global navigation component rendered on every page for routing.
+
 import Link from 'next/link';
 
 export default function Navbar() {

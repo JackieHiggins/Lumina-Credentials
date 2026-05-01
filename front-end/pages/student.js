@@ -1,3 +1,4 @@
+// Allows students to connect their wallet to check their verified academic credentials.
 
 import { useState } from 'react';
 import { ethers } from 'ethers';
@@ -12,6 +13,7 @@ export default function StudentPortal() {
   const [status, setStatus] = useState("");
   const [studentAddress, setStudentAddress] = useState("");
 
+  // Connects to MetaMask and queries the contract for the user's degree count.
   async function checkMyDegrees() {
     if (!window.ethereum) return alert("Please install MetaMask!");
     try {
@@ -34,9 +36,6 @@ export default function StudentPortal() {
     }
   }
 
-  const cardStyle = { backgroundColor: 'white', padding: '2rem', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)', border: '1px solid #e2e8f0' };
-  const buttonStyle = { width: '100%', padding: '14px', borderRadius: '8px', border: 'none', fontSize: '1.1rem', fontWeight: '600', cursor: 'pointer', backgroundColor: '#3b82f6', color: 'white', boxShadow: '0 2px 4px rgba(59, 130, 246, 0.3)' };
-
   return (
     <main style={{ padding: '3rem 2rem', maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
       <h2 style={{ color: '#0f172a', marginBottom: '1rem', fontSize: '2.5rem' }}>My Credentials</h2>
@@ -44,8 +43,8 @@ export default function StudentPortal() {
         Connect your wallet to view your cryptographically verified academic records.
       </p>
       
-      <div style={cardStyle}>
-        <button onClick={checkMyDegrees} style={buttonStyle}>
+      <div className="card">
+        <button onClick={checkMyDegrees} className="btn-primary">
           Connect Wallet & View Records
         </button>
 
@@ -54,7 +53,7 @@ export default function StudentPortal() {
         {degreeCount !== null && (
           <div style={{ marginTop: '25px', padding: '20px', backgroundColor: '#f8fafc', borderRadius: '8px', border: '1px dashed #cbd5e1', textAlign: 'left' }}>
             <h3 style={{ marginTop: '0', color: '#1e293b' }}>Welcome, Graduate!</h3>
-            <p style={{ fontSize: '0.9rem', color: '#475569', wordBreak: 'break-all' }}><strong>Wallet:</strong> {studentAddress}</p>
+            <p style={{ fontSize: '0.9rem', color: '#475569', wordBreak: 'break-all' }}><strong>Wallet:</strong> <span className="blockchain-address">{studentAddress}</span></p>
             <p style={{ fontSize: '1.1rem' }}><strong>Valid Degrees Owned:</strong> {degreeCount}</p>
             
             {degreeCount > 0 ? (
