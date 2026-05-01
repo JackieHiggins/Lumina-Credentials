@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { ethers } from 'ethers';
 
-const CONTRACT_ADDRESS = "0xAfc343Ea50F981d57E35139E4E84A873d6cDd481"; 
+const CONTRACT_ADDRESS = "0xB75c96277cE42C8879e5976DF0FE0a2Fcd2DfB3C"; 
 const ABI = [
   "function getStudentDegreeCount(address student) public view returns (uint256)"
 ];
